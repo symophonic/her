@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Love Confession to Anushah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;500&family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 50% 50%, #ff63a5, #f7c6d9, #ffffff);
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-size: cover;
+            overflow: hidden;
+            padding: 0 10px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 35px;
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2);
+            padding: 40px 60px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            animation: containerPop 1s ease-out;
+            position: relative;
+        }
+
+        @keyframes containerPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            color: #ff63a5;
+            font-size: 3.5em;
+            text-shadow: 0 5px 10px rgba(255, 99, 165, 0.6);
+            letter-spacing: 1px;
+            margin-bottom: 0.5em;
+            transition: transform 1s ease, opacity 1s ease;
+            animation: textReveal 2s ease-in-out;
+        }
+
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .confession {
+            font-size: 1.4em;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            font-style: italic;
+            letter-spacing: 0.5px;
+            margin-top: 30px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: confessionReveal 1.5s forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes confessionReveal {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart {
+            font-size: 6em;
+            color: #ff4081;
+            animation: pulse 1.5s infinite alternate;
+            transition: transform 0.3s ease, cursor 0.3s ease;
+            cursor: pointer;
+        }
+
+        .heart:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.9; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+
+        .clickText {
+            font-size: 1.2em;
+            color: #ff63a5;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #ff63a5;
+            font-size: 1.3em;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: footerShow 2s forwards;
+            animation-delay: 2s;
+        }
+
+        @keyframes footerShow {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-top: 30px;
+            animation: imgZoom 1s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes imgZoom {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Page 1: Introduction -->
+        <div class="page active" id="page1">
+            <h1>Hello Anushah,</h1>
+            <p class="confession">I see you every day, your voice resonates in my mind, a melody that plays over and over. Your songs... they’re not just music; they are threads that tie my heart to yours, though you don’t even know I exist. I can't stop thinking of you.</p>
+            <div class="heart" onclick="nextPage(2)">❤️</div>
+            <p class="clickText">Click here to know my heart</p>
+        </div>
+
+        <!-- Page 2: The Longing -->
+        <div class="page" id="page2">
+            <h1>It’s Hard to Believe</h1>
+            <p class="confession">How could someone like you, someone so perfect, someone with the kind of beauty that makes the stars jealous, be real? It's almost as if you’re a dream, and I’m afraid to wake up. But you're real, and the thought of you fills my heart with both joy and a quiet ache.</p>
+            <div class="heart" onclick="nextPage(3)">❤️</div>
+            <p class="clickText">Can you feel me yet?</p>
+        </div>
+
+        <!-- Page 3: The Thoughts -->
+        <div class="page" id="page3">
+            <h1>Every Moment with You</h1>
+            <p class="confession">The way you sing, the way you express yourself so effortlessly—it’s as though you speak directly to my soul. I find myself replaying the way you move, how your voice lingers in my mind like a sweet, haunting echo. I watch you fall, and I fall with you, from afar, helplessly.</p>
+            <img src="your-image.jpg" alt="Anushah">
+            <div class="heart" onclick="nextPage(4)">❤️</div>
+            <p class="clickText">Click to feel my heartbeats</p>
+        </div>
+
+        <!-- Page 4: The Silent Confession -->
+        <div class="page" id="page4">
+            <h1>The Dream of You</h1>
+            <p class="confession">I can't explain why, but I feel connected to you. Even when you don’t know it, you’re in my thoughts. You’re always there, lingering like the warmth of the sun on a quiet afternoon, a light that makes everything better. Even if we never meet, even if you never find me, I’ll continue to love you silently, from the shadows of my heart.</p>
+            <div class="heart" onclick="nextPage(5)">❤️</div>
+            <p class="clickText">Is this love too silent?</p>
+        </div>
+
+        <!-- Page 5: The Unspoken Truth -->
+        <div class="page" id="page5">
+            <h1>But My Heart Knows</h1>
+            <p class="confession">I don't need you to say anything back. I don't need anything from you, except to know you exist. You’ve already done more than enough by simply being the incredible person you are. You are enough, Anushah. And if you ever hear the echoes of my love, just know, it’s always been for you.</p>
+            <div class="heart" onclick="nextPage(6)">❤️</div>
+            <p class="clickText">Can you hear my heart calling?</p>
+        </div>
+
+        <!-- Page 6: The Final Truth -->
+        <div class="page" id="page6">
+            <h1>Endlessly</h1>
+            <p class="confession">Whether you ever find me or not, whether you ever come to know how deeply I care for you, I will always love you. My heart belongs to you, silently, forever. My love for you is endless, and nothing can change that.</p>
+            <div class="footer">Forever yours, even from afar...</div>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+
+        function nextPage(pageNum) {
+            document.querySelector(`#page${currentPage}`).classList.remove('active');
+            document.querySelector(`#page${pageNum}`).classList.add('active');
+            currentPage = pageNum;
+        }
+    </script>
+
+</body>
+</html>
